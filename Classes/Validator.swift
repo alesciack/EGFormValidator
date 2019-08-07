@@ -50,6 +50,11 @@ public struct Validator {
      - Returns: `True` if the control passes validation
      */
     public func validate() -> Bool {
+        if(String(describing: control?.getValue()) == ""){
+            
+            return true
+        }
+        
         return predicate(control?.getValue(), predicateParameters)
     }
 
